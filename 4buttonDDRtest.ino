@@ -5,10 +5,10 @@
 #include "USB.h"
 #include "USBHIDKeyboard.h"
 USBHIDKeyboard Keyboard;
+const int leftPin = 1;
+const int downPin = 2;
 const int upPin = 3;
 const int rightPin = 4;
-const int downPin = 2;
-const int leftPin = 1;
 const int escPin = 5;
 const int enterPin = 6;
 const int leftLightPin = 10;
