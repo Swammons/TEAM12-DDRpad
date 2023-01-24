@@ -1,3 +1,6 @@
+//Drew Simmons
+//Team 12 DDR pad 
+//Milestone 1
 
 #include "USB.h"
 #include "USBHIDKeyboard.h"
@@ -13,6 +16,7 @@ const int downLightPin = 11;
 const int upLightPin = 12;
 const int rightLightPin = 13;
 
+//Decalring Valuse of sensors (in this case they are 0 or 1 because we are using buttons)
 int upSensorValue = 0;
 int rightSensorValue = 0;
 int downSensorValue = 0;
@@ -21,9 +25,8 @@ int escSensorValue = 0;
 int enterSensorValue = 0;
 
 void setup() {
-  // make pin 0 an input and turn on the pull-up resistor so it goes high unless
-  // connected to ground:
   Serial.begin(115200);
+  // Declaring pin modes for buttons and LEDs
   pinMode(upPin,INPUT_PULLUP);
   pinMode(rightPin,INPUT_PULLUP);
   pinMode(downPin,INPUT_PULLUP);
@@ -45,6 +48,8 @@ void loop() {
   leftSensorValue = digitalRead(leftPin);
   escSensorValue = digitalRead(escPin);
   enterSensorValue = digitalRead(enterPin);
+  // if the button is pressed send the corasponding button input
+  // and light up the corasponding LEDs
   if (upSensorValue == 0){
     Keyboard.press(KEY_UP_ARROW);
     digitalWrite(upLightPin,HIGH);
